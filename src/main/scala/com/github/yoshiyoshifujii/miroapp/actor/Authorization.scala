@@ -8,12 +8,11 @@ object Authorization {
 
   sealed trait Command
   final case class GetCommand(replyTo: ActorRef[GetReply]) extends Command
-
   final case class GetReply(accessToken: AccessToken)
 
   def apply(): Behavior[Command] =
-    Behaviors.setup { ctx =>
-      val accessToken = ctx.system.settings.config.getString("miro-app.accessToken")
+    Behaviors.setup { context =>
+      val accessToken = context.system.settings.config.getString("miro-app.accessToken")
       Behaviors.receiveMessage {
         case GetCommand(replyTo) =>
           replyTo ! GetReply(AccessToken(accessToken))
