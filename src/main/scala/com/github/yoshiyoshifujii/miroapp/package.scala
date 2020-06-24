@@ -1,5 +1,3 @@
 package com.github.yoshiyoshifujii
 
-package object miroapp {
-
-}
+package object miroapp {}

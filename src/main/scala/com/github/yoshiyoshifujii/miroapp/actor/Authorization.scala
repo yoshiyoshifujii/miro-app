@@ -1,6 +1,6 @@
 package com.github.yoshiyoshifujii.miroapp.actor
 
-import akka.actor.typed.{ActorRef, Behavior}
+import akka.actor.typed.{ ActorRef, Behavior }
 import akka.actor.typed.scaladsl.Behaviors
 import com.github.yoshiyoshifujii.miroapp.domain.AccessToken
 
